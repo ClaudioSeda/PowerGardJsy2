@@ -1,1 +1,24 @@
-
+ // Monta o JSON para publicação MQTT, agora com fpA, fpB, fpC e estado do relé
+  payload = "{";
+  payload += "\"vA\":"      + String(vA, 2) + ",";//Leitura de tensão fase1
+  payload += "\"vB\":"      + String(vB, 2) + ",";//Leitura de tensão fase2
+  payload += "\"vC\":"      + String(vC, 2) + ",";//Leitura de tensão fase3
+  payload += "\"iA\":"      + String(iA, 2) + ",";//Leitura de Corrente fase1
+  payload += "\"iB\":"      + String(iB, 2) + ",";//Leitura de Corrente fase2
+  payload += "\"iC\":"      + String(iC, 2) + ",";//Leitura de Corrente fase3
+  payload += "\"pA\":"      + String(pA, 1) + ",";//Leitura de Potencia Real fase1
+  payload += "\"pB\":"      + String(pB, 1) + ",";//Leitura de Potencia Real fase2
+  payload += "\"pC\":"      + String(pC, 1) + ",";//Leitura de Potencia Real fase3
+  payload += "\"pTotal\":"  + String(pTotal, 1) + ",";//Leitura de Potencia Real Total
+  payload += "\"sA\":"      + String(sA, 1) + ",";//Leitura de Potencia Aparente fase1
+  payload += "\"sB\":"      + String(sB, 1) + ",";//Leitura de Potencia Aparente fase2
+  payload += "\"sC\":"      + String(sC, 1) + ",";//Leitura de Potencia Aparente fase3
+  payload += "\"sTotal\":"  + String(sTotal, 1) + ",";//Leitura de Potencia Aparente Total
+  payload += "\"fpA\":"     + String(fpA, 3) + ",";//fator de potencia fase1
+  payload += "\"fpB\":"     + String(fpB, 3) + ",";//fator de potencia fase2
+  payload += "\"fpC\":"     + String(fpC, 3) + ",";//fator de potencia fase3
+  payload += "\"fp\":"      + String(fp, 3) + ",";
+  payload += "\"freq\":"    + String(freq, 2) + ",";//frequencia
+  payload += "\"kWh\":"     + String(kWh, 2) + ",";//Consumo
+  payload += "\"rele\":"    + String(estadoReleAtual);//estado do rele/sistema
+  payload += "}";
